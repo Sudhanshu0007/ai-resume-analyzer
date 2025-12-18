@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "Resumind" },
+    { title: "Analyxa" },
     { name: "description", content: "Smart resume analyzer!" },
   ];
 }
