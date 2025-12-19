@@ -115,7 +115,18 @@ export default function Home() {
 
   return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
     <Navbar />
-
+    {auth.isAuthenticated && (
+      <button
+        className="fixed right-6 top-6 primary-gradient text-white rounded-full px-4 py-2 cursor-pointer shadow-lg shadow-indigo-100 transition duration-200 ease-out hover:shadow-xl hover:scale-105 disabled:opacity-60 z-20"
+        onClick={async () => {
+          await auth.signOut();
+          navigate('/auth?next=/');
+        }}
+        disabled={isLoading}
+      >
+        Logout
+      </button>
+    )}
 
     <section className="main-section">
       <div className="page-heading py-16">
